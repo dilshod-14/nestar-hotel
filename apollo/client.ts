@@ -54,7 +54,7 @@ function createIsomorphicLink() {
 				connectionParams: () => {
 					return { headers: getHeaders() };
 				},
-			},
+			}, 
 		});
 
 		const errorLink = onError(({ graphQLErrors, networkError, response }) => {
