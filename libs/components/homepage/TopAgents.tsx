@@ -8,9 +8,9 @@ import { Autoplay, Navigation, Pagination } from 'swiper';
 import TopAgentCard from './TopAgentCard';
 import { Member } from '../../types/member/member';
 import { AgentsInquiry } from '../../types/member/member.input';
-import { useQuery } from '@apollo/client';
-import { GET_PROPERTIES } from '../../../apollo/user/query';
 import { T } from '../../types/common';
+import { GET_AGENTS } from '../../../apollo/user/query';
+import { useQuery } from '@apollo/client';
 
 interface TopAgentsProps {
 	initialInput: AgentsInquiry;
@@ -23,20 +23,20 @@ const TopAgents = (props: TopAgentsProps) => {
 	const [topAgents, setTopAgents] = useState<Member[]>([]);
 
 	/** APOLLO REQUESTS **/
-
 	const {
-		loading: getAgensLoading,
-		data: getAgensData,
-		error: getAgensError,
-		refetch: getAgensRefetch,
-	} = useQuery(GET_PROPERTIES, {
+		loading: getAgentsLoading,
+		data: getAgentsData,
+		error: getAgentsError,
+		refetch: getAgentsRefetch,
+	} = useQuery(GET_AGENTS, {
 		fetchPolicy: 'cache-and-network',
 		variables: { input: initialInput },
 		notifyOnNetworkStatusChange: true,
 		onCompleted: (data: T) => {
-			setTopAgents(data?.getAgens?.list);
+			setTopAgents(data?.getAgents?.list);
 		},
 	});
+
 	/** HANDLERS **/
 
 	if (device === 'mobile') {
