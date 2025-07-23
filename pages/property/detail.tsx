@@ -77,7 +77,7 @@ const PropertyDetail: NextPage = ({ initialComment, ...props }: any) => {
 			if (data?.getProperty) setSlideImage(data?.getProperty.propertyImages[0]);
 		},
 	});
-
+  
 	const {
 		loading: getPropertiesLoading,
 		data: getPropertiesData,
