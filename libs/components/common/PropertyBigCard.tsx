@@ -98,3 +98,4 @@ const PropertyBigCard = (props: PropertyBigCardProps) => {
 };
 
 export default PropertyBigCard;
+  
