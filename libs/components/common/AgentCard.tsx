@@ -77,7 +77,7 @@ const AgentCard = (props: AgentCardProps) => {
 				</Stack>
 			</Stack>
 		);
-	}
+	} 
 };
 
 export default AgentCard;
