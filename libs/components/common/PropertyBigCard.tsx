@@ -61,7 +61,7 @@ const PropertyBigCard = (props: PropertyBigCardProps) => {
 						</div>
 						<div>
 							<img src="/img/icons/expand.svg" alt="" />
-							<span>{property?.propertySquare} m2</span>
+							<span>{property?.propertyQuantity} m2</span>
 						</div>
 					</div>
 					<Divider sx={{ mt: '15px', mb: '17px' }} />
@@ -77,7 +77,7 @@ const PropertyBigCard = (props: PropertyBigCardProps) => {
 							<Typography className="view-cnt">{property?.propertyViews}</Typography>
 							<IconButton
 								color={'default'}
-								onClick={(e: { stopPropagation: () => void; }) => {
+								onClick={(e: { stopPropagation: () => void }) => {
 									e.stopPropagation();
 									likePropertyHandler(user, property?._id);
 								}}
@@ -98,4 +98,3 @@ const PropertyBigCard = (props: PropertyBigCardProps) => {
 };
 
 export default PropertyBigCard;
-  

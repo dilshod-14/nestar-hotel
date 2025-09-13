@@ -77,7 +77,7 @@ const PropertyCard = (props: PropertyCardType) => {
 							<img src="/img/icons/room.svg" alt="" /> <Typography>{property.propertyRooms} room</Typography>
 						</Stack>
 						<Stack className="option">
-							<img src="/img/icons/expand.svg" alt="" /> <Typography>{property.propertySquare} m2</Typography>
+							<img src="/img/icons/expand.svg" alt="" /> <Typography>{property.propertyQuantity} m2</Typography>
 						</Stack>
 					</Stack>
 					<Stack className="divider"></Stack>

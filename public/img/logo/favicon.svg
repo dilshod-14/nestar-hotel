@@ -1,1 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="500" zoomAndPan="magnify" viewBox="0 0 375 374.999991" height="500" preserveAspectRatio="xMidYMid meet" version="1.0"><defs><clipPath id="cb78c1facb"><path d="M 296 95 L 354.925781 95 L 354.925781 272 L 296 272 Z M 296 95 " clip-rule="nonzero"/></clipPath><clipPath id="a293203cb4"><path d="M 28.847656 95 L 89 95 L 89 272 L 28.847656 272 Z M 28.847656 95 " clip-rule="nonzero"/></clipPath><clipPath id="e3ce46087c"><path d="M 196 130 L 354.925781 130 L 354.925781 299 L 196 299 Z M 196 130 " clip-rule="nonzero"/></clipPath></defs><path fill="#ec6753" d="M 294.628906 121.996094 L 201.277344 4.546875 L 352.714844 91.96875 Z M 294.628906 121.996094 " fill-opacity="1" fill-rule="nonzero"/><path fill="#ec6753" d="M 194.300781 374.753906 L 194.664062 303.46875 L 346.878906 286.671875 Z M 194.300781 374.753906 " fill-opacity="1" fill-rule="nonzero"/><g clip-path="url(#cb78c1facb)"><path fill="#ec6753" d="M 355.203125 271.308594 L 296.910156 125.988281 L 355.203125 95.847656 Z M 355.203125 271.308594 " fill-opacity="1" fill-rule="nonzero"/></g><path fill="#ec6753" d="M 190.070312 303.46875 L 189.71875 374.785156 L 37.082031 286.660156 Z M 190.070312 303.46875 " fill-opacity="1" fill-rule="nonzero"/><path fill="#ec6753" d="M 90.691406 120.839844 L 31.363281 91.910156 L 182.742188 4.503906 Z M 90.691406 120.839844 " fill-opacity="1" fill-rule="nonzero"/><g clip-path="url(#a293203cb4)"><path fill="#ec6753" d="M 28.773438 95.746094 L 88.410156 124.832031 L 28.773438 271.472656 Z M 28.773438 95.746094 " fill-opacity="1" fill-rule="nonzero"/></g><path fill="#ec6753" d="M 95.289062 126.03125 L 290.050781 127.171875 L 192.382812 296.796875 Z M 95.289062 126.03125 " fill-opacity="1" fill-rule="nonzero"/><path fill="#ec6753" d="M 289.230469 122.578125 L 96.0625 121.4375 L 191.988281 0.214844 Z M 289.230469 122.578125 " fill-opacity="1" fill-rule="nonzero"/><path fill="#ec6753" d="M 91.6875 128.957031 L 188.167969 298.640625 L 29.753906 281.246094 Z M 91.6875 128.957031 " fill-opacity="1" fill-rule="nonzero"/><g clip-path="url(#e3ce46087c)"><path fill="#ec6753" d="M 293.632812 130.128906 L 354.238281 281.246094 L 196.613281 298.640625 Z M 293.632812 130.128906 " fill-opacity="1" fill-rule="nonzero"/></g></svg>
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Hotel location favicon">
+  <title>StayGo — Hotel location</title>
+  <desc>Pin (location) mark with hotel bed inside, for favicon usage.</desc>
+  <!-- Background (dark navy). Remove this circle if you need transparent background -->
+  <circle cx="32" cy="32" r="30" fill="#0B1220"/>
+  <!-- Map pin -->
+  <g transform="translate(0,2)">
+    <path d="M32 12c7.18 0 13 5.62 13 12.55 0 8.17-9.18 17.93-12.04 20.72a1.5 1.5 0 0 1-1.92 0C27.18 42.48 19 32.72 19 24.55 19 17.62 24.82 12 32 12z"
+          fill="none" stroke="#D4A44B" stroke-width="3" stroke-linejoin="round"/>
+    <!-- Bed icon inside pin -->
+    <g fill="none" stroke="#D4A44B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" transform="translate(22,21)">
+      <rect x="0" y="7" width="20" height="7" rx="1.8"/>
+      <rect x="1.5" y="2" width="6" height="4" rx="1.5"/>
+      <line x1="7.5" y1="7" x2="20" y2="7"/>
+    </g>
+  </g>
+</svg>

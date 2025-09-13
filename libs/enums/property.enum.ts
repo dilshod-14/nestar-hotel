@@ -1,12 +1,15 @@
 export enum PropertyType {
-	APARTMENT = 'APARTMENT',
-	VILLA = 'VILLA',
-	HOUSE = 'HOUSE',
+	STANDARD = 'STANDARD', // Oddiy xona
+	DELUXE = 'DELUXE', // Deluxe xona
+	SUITE = 'SUITE', // Suite xona
+	FAMILY = 'FAMILY', // Oila uchun
+	SINGLE = 'SINGLE', // Bir kishilik
+	DOUBLE = 'DOUBLE', // Ikki kishilik
 }
 
 export enum PropertyStatus {
 	ACTIVE = 'ACTIVE',
-	SOLD = 'SOLD',
+	BOOKED = 'BOOKED',
 	DELETE = 'DELETE',
 }
 
