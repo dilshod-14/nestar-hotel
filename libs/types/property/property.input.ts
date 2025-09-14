@@ -16,6 +16,7 @@ export interface PropertyInput {
 	propertyRent?: boolean;
 	memberId?: string;
 	constructedAt?: Date;
+	propertyStars?: number;
 }
 
 interface PISearch {
@@ -29,6 +30,7 @@ interface PISearch {
 	periodsRange?: PeriodsRange;
 	squaresRange?: Range;
 	text?: string;
+	starsList?: number[];
 }
 
 export interface PropertiesInquiry {

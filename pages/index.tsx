@@ -1,6 +1,6 @@
 import { NextPage } from 'next';
 import useDeviceDetect from '../libs/hooks/useDeviceDetect';
-import withLayoutMain from '../libs/components/layout/LayoutHome';
+import withLayoutHome from '../libs/components/layout/LayoutHome';
 import CommunityBoards from '../libs/components/homepage/CommunityBoards';
 import PopularProperties from '../libs/components/homepage/PopularProperties';
 import TopAgents from '../libs/components/homepage/TopAgents';
@@ -10,6 +10,7 @@ import TopProperties from '../libs/components/homepage/TopProperties';
 import { Stack } from '@mui/material';
 import Advertisement from '../libs/components/homepage/Advertisement';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import Hero from '../libs/components/layout/Hero';
 
 export const getStaticProps = async ({ locale }: any) => ({
 	props: {
@@ -45,4 +46,4 @@ const Home: NextPage = () => {
 	}
 };
 
-export default withLayoutMain(Home);
+export default withLayoutHome(Home);

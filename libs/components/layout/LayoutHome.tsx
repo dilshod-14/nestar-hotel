@@ -12,8 +12,9 @@ import Chat from '../Chat';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import Hero from './Hero';
 
-const withLayoutMain = (Component: any) => {
+const withLayoutHome = (Component: any) => {
 	return (props: any) => {
 		const device = useDeviceDetect();
 		const user = useReactiveVar(userVar);
@@ -61,6 +62,7 @@ const withLayoutMain = (Component: any) => {
 						</Stack>
 
 						<Stack className={'header-main'}>
+							<Hero />
 							<Stack className={'container'}>
 								<HeaderFilter />
 							</Stack>
@@ -82,4 +84,4 @@ const withLayoutMain = (Component: any) => {
 	};
 };
 
-export default withLayoutMain;
+export default withLayoutHome;

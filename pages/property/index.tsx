@@ -17,6 +17,8 @@ import { T } from '../../libs/types/common';
 import { LIKE_TARGET_PROPERTY } from '../../apollo/user/mutation';
 import { sweetMixinErrorAlert, sweetTopSmallSuccessAlert } from '../../libs/sweetAlert';
 
+
+
 export const getStaticProps = async ({ locale }: any) => ({
 	props: {
 		...(await serverSideTranslations(locale, ['common'])),
@@ -180,7 +182,12 @@ const PropertyList: NextPage = ({ initialInput, ...props }: any) => {
 								) : (
 									properties.map((property: Property) => {
 										return (
-											<PropertyCard property={property} likePropertyHandler={likePropertyHandler} key={property?._id} />
+											<PropertyCard
+												property={property}
+												likePropertyHandler={likePropertyHandler}
+												refetchProperties={getPropertiesRefetch}
+												key={property?._id}
+											/>
 										);
 									})
 								)}

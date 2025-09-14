@@ -36,6 +36,7 @@ export interface Property {
 	constructedAt?: Date;
 	createdAt: Date;
 	updatedAt: Date;
+	propertyStars?: number;
 	/** from aggregation **/
 	meLiked?: MeLiked[];
 	memberData?: Member;

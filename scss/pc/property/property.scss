@@ -1,6 +1,6 @@
 #pc-wrap {
 	#property-list-page {
-		padding-bottom: 40px;
+		padding-bottom: 10px;
 		background: #f6f6f6;
 		.container {
 			.right {
@@ -213,8 +213,8 @@
 						flex-wrap: wrap;
 						gap: 23px;
 						.card-config {
-							width: 296px;
-							height: 413px;
+							width: 295px;
+							height: 460px;
 							margin-bottom: 7px;
 							border-radius: 12px;
 							background: #fff;
@@ -330,6 +330,42 @@
 											line-height: normal;
 										}
 									}
+								}
+								.rating-box .MuiRating-root {
+									display: flex;
+									gap: 2px;
+									margin-top: 5px;
+									cursor: pointer;
+									transition: transform 0.2s;
+								}
+
+								.rating-box .MuiRating-iconHover {
+									transform: scale(1.2); // hover effekti
+								}
+
+								.rating-box .MuiRating-iconFilled {
+									color: #f7c948;
+								}
+
+								.rating-box .MuiRating-iconEmpty {
+									color: #ccc;
+								}
+
+								.card-config .MuiRating-iconFilled {
+									color: #ffc107; // sariq
+								}
+
+								.card-config .MuiRating-iconEmpty {
+									color: #ddd;
+								}
+
+								.card-config .MuiRating-icon {
+									font-size: 18px;
+									color: #ffc107; // sariq yulduz
+								}
+
+								.card-config .MuiRating-iconEmpty {
+									color: #ddd;
 								}
 								.divider {
 									width: 100%;

@@ -43,6 +43,16 @@ body::-webkit-scrollbar {
 	display: none; /* for Chrome, Safari, and Opera */
 }
 
+.team {
+	.overlay {
+		transition: opacity 0.3s ease;
+	}
+
+	div:hover .overlay {
+		opacity: 1;
+	}
+}
+
 #pc-wrap {
 	#top {
 		.navbar {
@@ -183,8 +193,8 @@ body::-webkit-scrollbar {
 			flex-direction: column;
 			align-items: center;
 			.search-box {
-				position: relative;
-				margin-top: 656px;
+				position: absolute;
+				margin-top: 256px;
 				padding: 16px 29px;
 				width: 1094px;
 				height: 96px;
@@ -404,6 +414,31 @@ body::-webkit-scrollbar {
 							box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 						}
 					}
+				}
+			}
+			.hero {
+				position: relative;
+				width: 100vw; /* ← to‘liq ekran eni */
+				height: 100vh; /* ← to‘liq ekran balandligi */
+				left: 50%; /* ← konteyner markazidan chiqib */
+				right: 50%;
+				margin-left: -50vw; /* ← konteyner cheklovini bekor qilish */
+				margin-right: -50vw;
+				overflow: hidden;
+
+				.bg {
+					position: absolute;
+					inset: 0;
+					background-size: cover;
+					background-position: center;
+					z-index: 0;
+				}
+
+				.content {
+					position: relative;
+					z-index: 1;
+					text-align: center;
+					margin-top: 25vh;
 				}
 			}
 		}
@@ -1053,4 +1088,223 @@ body::-webkit-scrollbar {
 	height: 17px;
 	border-radius: 2px;
 	margin-right: 8px;
+}
+
+.about-page {
+	.statistics {
+		margin-top: 60px;
+
+		.container {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			gap: 80px;
+
+			div {
+				text-align: center;
+
+				h3 {
+					font-size: 42px;
+					font-weight: 700;
+					color: #181a20;
+				}
+
+				p {
+					color: #666;
+					font-size: 16px;
+				}
+			}
+		}
+	}
+
+	.services {
+		margin-top: 100px;
+
+		h4 {
+			text-align: center;
+			margin-bottom: 40px;
+			font-size: 28px;
+			font-weight: 600;
+		}
+
+		.MuiStack-root {
+			display: flex;
+			justify-content: center;
+			gap: 40px;
+
+			div {
+				background: #f8f8f8;
+				border-radius: 16px;
+				padding: 25px;
+				width: 220px;
+				text-align: center;
+				box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+
+				img {
+					width: 60px;
+					margin-bottom: 15px;
+				}
+
+				p {
+					color: #666;
+					margin-top: 10px;
+					font-size: 14px;
+				}
+			}
+		}
+	}
+
+	.team {
+		margin-top: 120px;
+
+		h4 {
+			text-align: center;
+			margin-bottom: 40px;
+			font-size: 28px;
+			font-weight: 600;
+		}
+
+		.MuiStack-root {
+			display: flex;
+			justify-content: center;
+			gap: 50px;
+
+			> div {
+				background: #fff;
+				border-radius: 16px;
+				box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+				padding: 20px;
+				width: 250px;
+				text-align: center;
+				position: relative;
+				overflow: hidden;
+
+				.overlay {
+					position: absolute;
+					inset: 0;
+					background: rgba(0, 0, 0, 0.7);
+					color: #fff;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					padding: 15px;
+					border-radius: 16px;
+					opacity: 0;
+					transition: opacity 0.3s ease;
+					font-size: 13px;
+					text-align: center;
+				}
+
+				&:hover .overlay {
+					opacity: 1;
+				}
+
+				img {
+					width: 120px;
+					height: 120px;
+					object-fit: cover;
+					border-radius: 50%;
+					margin-bottom: 15px;
+				}
+
+				h6 {
+					font-weight: 600;
+					margin-bottom: 4px;
+				}
+
+				p {
+					color: #777;
+					font-size: 14px;
+				}
+
+				.MuiIconButton-root {
+					color: #444;
+					transition: color 0.2s;
+
+					&:hover {
+						color: #e63946;
+					}
+				}
+			}
+		}
+	}
+
+	.partners {
+		margin-top: 120px;
+
+		h4 {
+			text-align: center;
+			margin-bottom: 40px;
+			font-size: 28px;
+			font-weight: 600;
+		}
+
+		.MuiStack-root {
+			display: flex;
+			justify-content: center;
+			gap: 60px;
+
+			img {
+				width: 120px;
+				opacity: 0.7;
+				transition: opacity 0.2s;
+
+				&:hover {
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	.help {
+		margin: 120px 0;
+
+		.container {
+			background: #f6f6f6;
+			border-radius: 16px;
+			padding: 40px 60px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			.left {
+				h5 {
+					font-weight: 600;
+					font-size: 22px;
+					margin-bottom: 8px;
+				}
+
+				p {
+					color: #666;
+				}
+			}
+
+			.right {
+				display: flex;
+				gap: 15px;
+
+				.white {
+					background: #fff;
+					padding: 14px 25px;
+					border-radius: 30px;
+					border: 1px solid #ccc;
+					cursor: pointer;
+
+					display: flex;
+					align-items: center;
+					gap: 8px;
+				}
+
+				.black {
+					background: #181a20;
+					color: #fff;
+					padding: 14px 25px;
+					border-radius: 30px;
+					display: flex;
+					align-items: center;
+					gap: 10px;
+				}
+			}
+		}
+	}
 }
