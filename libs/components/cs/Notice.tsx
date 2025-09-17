@@ -1,53 +1,60 @@
 import React from 'react';
-import { Stack, Box } from '@mui/material';
-import useDeviceDetect from '../../hooks/useDeviceDetect';
+import { Stack, Typography, Paper, Chip } from '@mui/material';
+import EventIcon from '@mui/icons-material/Event';
 
 const Notice = () => {
-	const device = useDeviceDetect();
+  const notices = [
+    {
+      id: 1,
+      title: 'Register to use and get discounts',
+      date: '01.03.2024',
+      type: 'Event',
+    },
+    {
+      id: 2,
+      title: "It's absolutely free to upload and trade properties",
+      date: '31.03.2024',
+      type: 'Announcement',
+    },
+  ];
 
-	/** APOLLO REQUESTS **/
-	/** LIFECYCLES **/
-	/** HANDLERS **/
-
-	const data = [
-		{
-			no: 1,
-			event: true,
-			title: 'Register to use and get discounts',
-			date: '01.03.2024',
-		},
-		{
-			no: 2,
-			title: "It's absolutely free to upload and trade properties",
-			date: '31.03.2024',
-		},
-	];
-
-	if (device === 'mobile') {
-		return <div>NOTICE MOBILE</div>;
-	} else {
-		return (
-			<Stack className={'notice-content'}>
-				<span className={'title'}>Notice</span>
-				<Stack className={'main'}>
-					<Box component={'div'} className={'top'}>
-						<span>number</span>
-						<span>title</span>
-						<span>date</span>
-					</Box>
-					<Stack className={'bottom'}>
-						{data.map((ele: any) => (
-							<div className={`notice-card ${ele?.event && 'event'}`} key={ele.title}>
-								{ele?.event ? <div>event</div> : <span className={'notice-number'}>{ele.no}</span>}
-								<span className={'notice-title'}>{ele.title}</span>
-								<span className={'notice-date'}>{ele.date}</span>
-							</div>
-						))}
-					</Stack>
-				</Stack>
-			</Stack>
-		);
-	}
+  return (
+    <Stack spacing={2}>
+      {notices.map((notice) => (
+        <Paper
+          key={notice.id}
+          elevation={3}
+          sx={{
+            p: 3,
+            borderRadius: 3,
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 1,
+            background: '#ffffff',
+            transition: '0.3s',
+            '&:hover': {
+              transform: 'translateY(-3px)',
+              boxShadow: '0 6px 15px rgba(0,0,0,0.1)',
+            },
+          }}
+        >
+          <Stack direction="row" justifyContent="space-between" alignItems="center">
+            <Chip
+              icon={<EventIcon />}
+              label={notice.type}
+              sx={{ background: '#219ebc', color: '#fff', fontWeight: 500 }}
+            />
+            <Typography variant="body2" sx={{ color: '#888' }}>
+              {notice.date}
+            </Typography>
+          </Stack>
+          <Typography variant="h6" sx={{ mt: 1, fontWeight: 600, color: '#222' }}>
+            {notice.title}
+          </Typography>
+        </Paper>
+      ))}
+    </Stack>
+  );
 };
 
 export default Notice;

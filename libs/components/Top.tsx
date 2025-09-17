@@ -18,6 +18,7 @@ import { userVar } from '../../apollo/store';
 import { Logout } from '@mui/icons-material';
 import { REACT_APP_API_URL } from '../config';
 import { motion } from 'framer-motion';
+import NotificationBell from './common/NotificationList';
 
 const Top = () => {
 	const device = useDeviceDetect();
@@ -185,7 +186,7 @@ const Top = () => {
 									<div>{t('Listings')}</div>
 								</Link>
 								<Link href={'/agent'}>
-									<div> {t('Agents')} </div>
+									<div> {t('Hosts')} </div>
 								</Link>
 								<Link href={'/community?articleCategory=FREE'}>
 									<div> {t('Community')} </div>
@@ -212,7 +213,6 @@ const Top = () => {
 												alt=""
 											/>
 										</div>
-
 										<Menu
 											id="basic-menu"
 											anchorEl={logoutAnchor}
@@ -240,7 +240,7 @@ const Top = () => {
 								)}
 
 								<div className={'lan-box'}>
-									{user?._id && <NotificationsOutlinedIcon className={'notification-icon'} />}
+									{user?._id && <NotificationBell />}
 									<Button
 										disableRipple
 										className="btn-lang"

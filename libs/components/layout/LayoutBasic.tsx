@@ -28,6 +28,12 @@ const withLayoutBasic = (Component: any) => {
 				bgImage = '';
 
 			switch (router.pathname) {
+				case '/about':
+					title = 'About Us';
+					desc = 'Learn more about our story and values';
+					bgImage = 'https://images.unsplash.com/photo-1523804427826-322aa3cfaa42?auto=format&fit=crop&w=1600&q=80';
+					break;
+
 				case '/property':
 					title = 'Property Search';
 					desc = 'We are glad to see you again!';
@@ -141,7 +147,7 @@ const withLayoutBasic = (Component: any) => {
 							<Component {...props} />
 						</Stack>
 
-						 <Chat />
+						<Chat />
 
 						<Stack id={'footer'}>
 							<Footer />
