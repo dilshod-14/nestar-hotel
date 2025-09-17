@@ -91,29 +91,35 @@ body::-webkit-scrollbar {
 							color: #eeeeeeed;
 							font-family: $font;
 							font-size: 15px;
-							font-style: normal;
 							font-weight: 600;
-							line-height: normal;
 							cursor: pointer;
-							.community_menu {
+							transition: color 0.3s ease;
+
+							// pastki chiziq
+							&::after {
+								content: '';
 								position: absolute;
-								left: -177%;
-								top: 30px;
-								width: 434px;
-								height: 33px;
-								background: white;
-								transition: all ease 2s;
-								&:before {
-									content: '';
-									display: block;
-									position: absolute;
-									top: 0;
-									right: 50%;
-									width: 10px;
-									height: 10px;
-									background: white;
-									transform: translateY(-50%) rotate(45deg);
-									z-index: 0;
+								bottom: -6px;
+								left: 0;
+								width: 0%;
+								height: 2px;
+								background: #2bbcff; // hover chizig‘i rangi
+								transition: width 0.3s ease;
+							}
+
+							&:hover {
+								color: #2bbcff; // hover rang
+							}
+
+							&:hover::after {
+								width: 100%;
+							}
+
+							&.active {
+								color: #2bbcff;
+
+								&::after {
+									width: 100%;
 								}
 							}
 						}
@@ -688,135 +694,135 @@ body::-webkit-scrollbar {
 	}
 
 	#hotel-footer {
-  background: #0b1220;
-  color: #ccc;
-  padding: 60px 8%;
-  display: flex;
-  flex-direction: column;
-  gap: 60px;
+		background: #0b1220;
+		color: #ccc;
+		padding: 60px 8%;
+		display: flex;
+		flex-direction: column;
+		gap: 60px;
 
-  .newsletter {
-    background: #141b2d;
-    border-radius: 20px;
-    padding: 40px 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 30px;
+		.newsletter {
+			background: #141b2d;
+			border-radius: 20px;
+			padding: 40px 50px;
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			flex-wrap: wrap;
+			gap: 30px;
 
-    .brand {
-      color: #ffb703;
-      font-weight: 700;
-      font-size: 26px;
-    }
+			.brand {
+				color: #ffb703;
+				font-weight: 700;
+				font-size: 26px;
+			}
 
-    .subscribe {
-      margin-top: 20px;
-      display: flex;
-      max-width: 450px;
-      width: 100%;
-    }
+			.subscribe {
+				margin-top: 20px;
+				display: flex;
+				max-width: 450px;
+				width: 100%;
+			}
 
-    .right img {
-      width: 120px;
-    }
-  }
+			.right img {
+				width: 120px;
+			}
+		}
 
-  .features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 25px;
+		.features {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+			gap: 25px;
 
-    .feature {
-      display: flex;
-      gap: 15px;
-      align-items: center;
+			.feature {
+				display: flex;
+				gap: 15px;
+				align-items: center;
 
-      img {
-        width: 36px;
-      }
+				img {
+					width: 36px;
+				}
 
-      strong {
-        color: #fff;
-        display: block;
-      }
+				strong {
+					color: #fff;
+					display: block;
+				}
 
-      span {
-        font-size: 14px;
-        color: #999;
-      }
-    }
-  }
+				span {
+					font-size: 14px;
+					color: #999;
+				}
+			}
+		}
 
-  .bottom {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 50px;
+		.bottom {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+			gap: 50px;
 
-    .col {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
+			.col {
+				display: flex;
+				flex-direction: column;
+				gap: 10px;
 
-      .logo {
-        width: 150px;
-        margin-bottom: 10px;
-      }
+				.logo {
+					width: 150px;
+					margin-bottom: 10px;
+				}
 
-      strong {
-        color: #fff;
-        margin-bottom: 10px;
-      }
+				strong {
+					color: #fff;
+					margin-bottom: 10px;
+				}
 
-      span {
-        font-size: 14px;
-        cursor: pointer;
+				span {
+					font-size: 14px;
+					cursor: pointer;
 
-        &:hover {
-          color: #ffb703;
-        }
-      }
+					&:hover {
+						color: #ffb703;
+					}
+				}
 
-      .icons {
-        display: flex;
-        gap: 12px;
+				.icons {
+					display: flex;
+					gap: 12px;
 
-        svg {
-          background: #1e2535;
-          border-radius: 50%;
-          padding: 8px;
-          color: #fff;
-          transition: 0.3s;
+					svg {
+						background: #1e2535;
+						border-radius: 50%;
+						padding: 8px;
+						color: #fff;
+						transition: 0.3s;
 
-          &:hover {
-            background: #ffb703;
-            color: #0b1220;
-          }
-        }
-      }
-    }
-  }
+						&:hover {
+							background: #ffb703;
+							color: #0b1220;
+						}
+					}
+				}
+			}
+		}
 
-  .copyright {
-    border-top: 1px solid #1f2635;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding-top: 25px;
-    color: #777;
-    font-size: 13px;
+		.copyright {
+			border-top: 1px solid #1f2635;
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			padding-top: 25px;
+			color: #777;
+			font-size: 13px;
 
-    .links span {
-      cursor: pointer;
+			.links span {
+				cursor: pointer;
 
-      &:hover {
-        color: #ffb703;
-      }
-    }
-  }
-}
-
+				&:hover {
+					color: #ffb703;
+				}
+			}
+		}
+	}
 }
 
 .MuiPaper-root.MuiMenu-paper {

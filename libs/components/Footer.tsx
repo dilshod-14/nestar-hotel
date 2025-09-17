@@ -9,7 +9,7 @@ const Footer = () => {
 
 	const handleSubscribe = () => {
 		if (!email) return alert('Please enter your email');
-		// ✨ Emailni query sifatida yuboramiz
+		//  Emailni query sifatida yuboramiz
 		router.push({
 			pathname: '/property', // filtr sahifang route nomi
 			query: { search: email }, // kerakli query key
