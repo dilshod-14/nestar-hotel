@@ -31,6 +31,9 @@ export interface Property {
 	propertyBarter: boolean;
 	propertyRent: boolean;
 	memberId: string;
+
+	propertyRatingAvg?: number;
+	propertyRatingCount?: number;
 	soldAt?: Date;
 	deletedAt?: Date;
 	constructedAt?: Date;

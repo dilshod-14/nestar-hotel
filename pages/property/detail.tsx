@@ -1,5 +1,5 @@
 import React, { ChangeEvent, useEffect, useState } from 'react';
-import { Box, Button, CircularProgress, Rating, Stack, Typography } from '@mui/material';
+import { Box, Button, CircularProgress, Stack, Typography } from '@mui/material';
 import useDeviceDetect from '../../libs/hooks/useDeviceDetect';
 import withLayoutFull from '../../libs/components/layout/LayoutFull';
 import { NextPage } from 'next';
@@ -32,7 +32,6 @@ import { T } from '../../libs/types/common';
 import { Direction, Message } from '../../libs/enums/common.enum';
 import { CREATE_COMMENT, LIKE_TARGET_PROPERTY } from '../../apollo/user/mutation';
 import { sweetErrorHandling, sweetMixinErrorAlert, sweetTopSmallSuccessAlert } from '../../libs/sweetAlert';
-import { CREATE_REVIEW } from '../../apollo/mutation';
 
 SwiperCore.use([Autoplay, Navigation, Pagination]);
 
@@ -62,26 +61,6 @@ const PropertyDetail: NextPage = ({ initialComment, ...props }: any) => {
 	/** APOLLO REQUESTS **/
 	const [likeTargetProperty] = useMutation(LIKE_TARGET_PROPERTY);
 	const [createComment] = useMutation(CREATE_COMMENT);
-	const [createReview] = useMutation(CREATE_REVIEW);
-	const [reviewRating, setReviewRating] = useState<number | null>(0);
-
-	const createReviewHandler = async () => {
-		try {
-			if (!user?._id) throw new Error(Message.NOT_AUTHENTICATED);
-			await createReview({
-				variables: {
-					input: {
-						propertyId,
-						rating: reviewRating,
-						commentContent: insertCommentData.commentContent, // istasak comment bilan birga
-					},
-				},
-			});
-			await sweetTopSmallSuccessAlert('Thanks for your review!', 1000);
-		} catch (err: any) {
-			await sweetErrorHandling(err);
-		}
-	};
 
 	const {
 		loading: getPropertyLoading,
@@ -98,7 +77,7 @@ const PropertyDetail: NextPage = ({ initialComment, ...props }: any) => {
 			if (data?.getProperty) setSlideImage(data?.getProperty.propertyImages[0]);
 		},
 	});
-
+  
 	const {
 		loading: getPropertiesLoading,
 		data: getPropertiesData,
@@ -522,14 +501,6 @@ const PropertyDetail: NextPage = ({ initialComment, ...props }: any) => {
 								)}
 								<Stack className={'leave-review-config'}>
 									<Typography className={'main-title'}>Leave A Review</Typography>
-
-									<Typography className={'review-title'}>Rating</Typography>
-									<Rating
-										name="property-rating"
-										value={reviewRating}
-										onChange={(event, newValue) => setReviewRating(newValue)}
-									/>
-
 									<Typography className={'review-title'}>Review</Typography>
 									<textarea
 										onChange={({ target: { value } }: any) => {
@@ -537,14 +508,26 @@ const PropertyDetail: NextPage = ({ initialComment, ...props }: any) => {
 										}}
 										value={insertCommentData.commentContent}
 									></textarea>
-
 									<Box className={'submit-btn'} component={'div'}>
 										<Button
 											className={'submit-review'}
-											disabled={!reviewRating || user?._id === ''}
-											onClick={createReviewHandler}
+											disabled={insertCommentData.commentContent === '' || user?._id === ''}
+											onClick={createCommentHandler}
 										>
 											<Typography className={'title'}>Submit Review</Typography>
+											<svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+												<g clipPath="url(#clip0_6975_3642)">
+													<path
+														d="M16.1571 0.5H6.37936C6.1337 0.5 5.93491 0.698792 5.93491 0.944458C5.93491 1.19012 6.1337 1.38892 6.37936 1.38892H15.0842L0.731781 15.7413C0.558156 15.915 0.558156 16.1962 0.731781 16.3698C0.818573 16.4566 0.932323 16.5 1.04603 16.5C1.15974 16.5 1.27345 16.4566 1.36028 16.3698L15.7127 2.01737V10.7222C15.7127 10.9679 15.9115 11.1667 16.1572 11.1667C16.4028 11.1667 16.6016 10.9679 16.6016 10.7222V0.944458C16.6016 0.698792 16.4028 0.5 16.1571 0.5Z"
+														fill="#181A20"
+													/>
+												</g>
+												<defs>
+													<clipPath id="clip0_6975_3642">
+														<rect width="16" height="16" fill="white" transform="translate(0.601562 0.5)" />
+													</clipPath>
+												</defs>
+											</svg>
 										</Button>
 									</Box>
 								</Stack>

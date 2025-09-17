@@ -122,6 +122,16 @@ export const LIKE_TARGET_MEMBER = gql`
  *        PROPERTY        *
  *************************/
 
+export const RATE_PROPERTY = gql`
+	mutation RateProperty($input: RatePropertyInput!) {
+		rateProperty(input: $input) {
+			_id
+			propertyRatingAvg
+			propertyRatingCount
+		}
+	}
+`;
+
 export const CREATE_PROPERTY = gql`
 	mutation CreateProperty($input: PropertyInput!) {
 		createProperty(input: $input) {
