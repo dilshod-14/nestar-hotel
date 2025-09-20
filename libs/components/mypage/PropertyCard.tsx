@@ -77,7 +77,7 @@ export const PropertyCard = (props: PropertyCardProps) => {
 						</Typography>
 					</Stack>
 				</Stack>
-				{!memberPage && property.propertyStatus !== 'SOLD' && (
+				{!memberPage && property.propertyStatus !== 'BOOKED' && (
 					<Menu
 						anchorEl={anchorEl}
 						open={open}
@@ -104,10 +104,10 @@ export const PropertyCard = (props: PropertyCardProps) => {
 									disableRipple
 									onClick={() => {
 										handleClose();
-										updatePropertyHandler(PropertyStatus.SOLD, property?._id);
+										updatePropertyHandler(PropertyStatus.BOOKED, property?._id);
 									}}
 								>
-									Sold
+									BOOKED
 								</MenuItem>
 							</>
 						)}

@@ -84,8 +84,8 @@ const AdminProperties: NextPage = ({ initialInquiry, ...props }: any) => {
 			case 'ACTIVE':
 				setPropertiesInquiry({ ...propertiesInquiry, search: { propertyStatus: PropertyStatus.ACTIVE } });
 				break;
-			case 'SOLD':
-				setPropertiesInquiry({ ...propertiesInquiry, search: { propertyStatus: PropertyStatus.SOLD } });
+			case 'BOOKED':
+				setPropertiesInquiry({ ...propertiesInquiry, search: { propertyStatus: PropertyStatus.BOOKED } });
 				break;
 			case 'DELETE':
 				setPropertiesInquiry({ ...propertiesInquiry, search: { propertyStatus: PropertyStatus.DELETE } });
@@ -177,11 +177,11 @@ const AdminProperties: NextPage = ({ initialInquiry, ...props }: any) => {
 									Active
 								</ListItem>
 								<ListItem
-									onClick={(e: any) => tabChangeHandler(e, 'SOLD')}
-									value="SOLD"
-									className={value === 'SOLD' ? 'li on' : 'li'}
+									onClick={(e: any) => tabChangeHandler(e, 'BOOKED')}
+									value="BOOKED"
+									className={value === 'BOOKED' ? 'li on' : 'li'}
 								>
-									Sold
+									BOOKED
 								</ListItem>
 								<ListItem
 									onClick={(e: any) => tabChangeHandler(e, 'DELETE')}

@@ -102,10 +102,10 @@ const MyProperties: NextPage = ({ initialInput, ...props }: any) => {
 							On Sale
 						</Typography>
 						<Typography
-							onClick={() => changeStatusHandler(PropertyStatus.SOLD)}
-							className={searchFilter.search.propertyStatus === 'SOLD' ? 'active-tab-name' : 'tab-name'}
+							onClick={() => changeStatusHandler(PropertyStatus.BOOKED)}
+							className={searchFilter.search.propertyStatus === 'BOOKED' ? 'active-tab-name' : 'tab-name'}
 						>
-							On Sold
+							On BOOKED
 						</Typography>
 					</Stack>
 					<Stack className="list-box">
