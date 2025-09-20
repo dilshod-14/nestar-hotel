@@ -190,7 +190,7 @@ export const PropertyPanelList = (props: PropertyPanelListType) => {
 												</Button>
 											)}
 
-											{property.propertyStatus === PropertyStatus.SOLD && (
+											{property.propertyStatus === PropertyStatus.BOOKED && (
 												<Button className={'badge warning'}>{property.propertyStatus}</Button>
 											)}
 
