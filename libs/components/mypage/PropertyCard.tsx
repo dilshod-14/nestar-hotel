@@ -9,16 +9,18 @@ import { formatterStr } from '../../utils';
 import Moment from 'react-moment';
 import { useRouter } from 'next/router';
 import { PropertyStatus } from '../../enums/property.enum';
+import { OperationVariables } from '@apollo/client';
 
 interface PropertyCardProps {
 	property: Property;
 	deletePropertyHandler?: any;
 	memberPage?: boolean;
 	updatePropertyHandler?: any;
+	 refetchProperties?: (variables?: Partial<OperationVariables>) => Promise<any>;
 }
 
 export const PropertyCard = (props: PropertyCardProps) => {
-	const { property, deletePropertyHandler, memberPage, updatePropertyHandler } = props;
+	const { property, deletePropertyHandler, memberPage, updatePropertyHandler, refetchProperties } = props;
 	const device = useDeviceDetect();
 	const router = useRouter();
 	const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);

@@ -19,6 +19,7 @@ import { sweetMixinErrorAlert, sweetTopSmallSuccessAlert } from '../../libs/swee
 
 
 
+
 export const getStaticProps = async ({ locale }: any) => ({
 	props: {
 		...(await serverSideTranslations(locale, ['common'])),
@@ -185,7 +186,6 @@ const PropertyList: NextPage = ({ initialInput, ...props }: any) => {
 											<PropertyCard
 												property={property}
 												likePropertyHandler={likePropertyHandler}
-												refetchProperties={getPropertiesRefetch}
 												key={property?._id}
 											/>
 										);
