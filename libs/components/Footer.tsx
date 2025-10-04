@@ -16,6 +16,7 @@ const Footer = () => {
 		});
 	};
 	return (
+		// @ts-ignore
 		<Box id="hotel-footer">
 			{/* 📩 Newsletter */}
 			<Stack className="newsletter">
