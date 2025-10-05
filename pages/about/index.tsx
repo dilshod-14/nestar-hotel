@@ -33,31 +33,35 @@ const About: NextPage = () => {
 					<Typography textAlign="center" variant="h4" fontWeight={700} mb={5} color="#023047">
 						Our Achievements
 					</Typography>
+
 					<Stack direction="row" spacing={6} justifyContent="center">
-						{[
-							{ label: 'Hotels Worldwide', value: counts.hotels + '+', color: '#ffb703' },
-							{ label: 'Happy Guests', value: counts.guests.toLocaleString(), color: '#fb8500' },
-							{ label: 'Average Rating', value: counts.rating.toFixed(1) + '★', color: '#219ebc' },
-						].map((s, i) => (
-							<motion.div
+						{(
+							[
+								{ label: 'Hotels Worldwide', value: counts.hotels + '+', color: '#ffb703' },
+								{ label: 'Happy Guests', value: counts.guests.toLocaleString(), color: '#fb8500' },
+								{ label: 'Average Rating', value: counts.rating.toFixed(1) + '★', color: '#219ebc' },
+							] as const
+						).map((s, i) => (
+							<Box
 								key={i}
+								component={motion.div}
 								initial={{ opacity: 0, y: 20 }}
 								whileInView={{ opacity: 1, y: 0 }}
 								transition={{ duration: 0.6, delay: i * 0.2 }}
-								style={{
+								sx={{
 									background: '#fff',
-									padding: '30px',
+									p: '30px',
 									borderRadius: '20px',
 									boxShadow: '0 5px 20px rgba(0,0,0,0.1)',
 									textAlign: 'center',
 									width: 220,
 								}}
 							>
-								<Typography variant="h3" fontWeight={700} color={s.color}>
+								<Typography variant="h3" fontWeight={700} sx={{ color: s.color }}>
 									{s.value}
 								</Typography>
 								<Typography sx={{ color: '#555' }}>{s.label}</Typography>
-							</motion.div>
+							</Box>
 						))}
 					</Stack>
 				</Stack>
@@ -67,28 +71,36 @@ const About: NextPage = () => {
 					<Typography variant="h4" textAlign="center" fontWeight={700} mb={5} color="#023047">
 						Why Guests Love Staying With Us
 					</Typography>
+
 					<Stack direction="row" justifyContent="center" spacing={4}>
-						{[
-							{
-								icon: '/img/icons/spa.svg',
-								title: 'Wellness & Spa',
-								desc: 'Relax and recharge in our wellness centers.',
-							},
-							{ icon: '/img/icons/roomservice.svg', title: 'Room Service', desc: '24/7 concierge at your fingertips.' },
-							{
-								icon: '/img/icons/breakfast.svg',
-								title: 'Free Breakfast',
-								desc: 'Start your day with delicious meals.',
-							},
-						].map((s, i) => (
-							<motion.div
+						{(
+							[
+								{
+									icon: '/img/icons/spa.svg',
+									title: 'Wellness & Spa',
+									desc: 'Relax and recharge in our wellness centers.',
+								},
+								{
+									icon: '/img/icons/roomservice.svg',
+									title: 'Room Service',
+									desc: '24/7 concierge at your fingertips.',
+								},
+								{
+									icon: '/img/icons/breakfast.svg',
+									title: 'Free Breakfast',
+									desc: 'Start your day with delicious meals.',
+								},
+							] as const
+						).map((s, i) => (
+							<Box
 								key={i}
+								component={motion.div}
 								initial={{ opacity: 0, scale: 0.9 }}
 								whileInView={{ opacity: 1, scale: 1 }}
 								transition={{ duration: 0.4, delay: i * 0.2 }}
-								style={{
+								sx={{
 									width: 220,
-									padding: '25px',
+									p: '25px',
 									textAlign: 'center',
 									borderRadius: '20px',
 									background: 'linear-gradient(135deg,#fff,#fef6e4)',
@@ -96,14 +108,14 @@ const About: NextPage = () => {
 									cursor: 'pointer',
 								}}
 							>
-								<img src={s.icon} alt="" style={{ width: 60, marginBottom: 15 }} />
-								<Typography fontWeight={600} color="#fb8500">
+								<Box component="img" src={s.icon} alt="" sx={{ width: 60, mb: 1.5 }} />
+								<Typography fontWeight={600} sx={{ color: '#fb8500' }}>
 									{s.title}
 								</Typography>
 								<Typography variant="body2" sx={{ color: '#555', mt: 1 }}>
 									{s.desc}
 								</Typography>
-							</motion.div>
+							</Box>
 						))}
 					</Stack>
 				</Stack>
@@ -113,49 +125,54 @@ const About: NextPage = () => {
 					<Typography variant="h4" textAlign="center" fontWeight={700} mb={5} color="#023047">
 						Meet Our Hotel Team
 					</Typography>
+
 					<Stack direction="row" spacing={5} justifyContent="center">
-						{[
-							{
-								img: '/img/team/member1.avif',
-								name: 'Emma Johnson',
-								role: 'General Manager',
-								bio: 'Over 10 years of experience leading luxury hotels worldwide.',
-							},
-							{
-								img: '/img/team/member2.avif',
-								name: 'David Kim',
-								role: 'Head Chef',
-								bio: 'Award-winning chef specializing in Asian and European cuisine.',
-							},
-							{
-								img: '/img/team/member3.avif',
-								name: 'Sophia Lee',
-								role: 'Guest Relations',
-								bio: 'Ensures every guest feels at home and cared for with excellence.',
-							},
-						].map((m, i) => (
-							<motion.div
+						{(
+							[
+								{
+									img: '/img/team/member1.avif',
+									name: 'Emma Johnson',
+									role: 'General Manager',
+									bio: 'Over 10 years of experience leading luxury hotels worldwide.',
+								},
+								{
+									img: '/img/team/member2.avif',
+									name: 'David Kim',
+									role: 'Head Chef',
+									bio: 'Award-winning chef specializing in Asian and European cuisine.',
+								},
+								{
+									img: '/img/team/member3.avif',
+									name: 'Sophia Lee',
+									role: 'Guest Relations',
+									bio: 'Ensures every guest feels at home and cared for with excellence.',
+								},
+							] as const
+						).map((m, i) => (
+							<Box
 								key={i}
+								component={motion.div}
 								whileHover={{ scale: 1.05 }}
 								transition={{ type: 'spring', stiffness: 200 }}
-								style={{
+								sx={{
 									width: 250,
 									background: '#fff',
 									borderRadius: '20px',
-									padding: '25px',
+									p: '25px',
 									textAlign: 'center',
 									boxShadow: '0 6px 20px rgba(0,0,0,0.1)',
 								}}
 							>
-								<img
+								<Box
+									component="img"
 									src={m.img}
 									alt={m.name}
-									style={{
+									sx={{
 										width: 120,
 										height: 120,
 										borderRadius: '50%',
 										objectFit: 'cover',
-										marginBottom: 15,
+										mb: 1.5,
 										border: '4px solid #219ebc20',
 									}}
 								/>
@@ -163,7 +180,9 @@ const About: NextPage = () => {
 								<Typography variant="body2" sx={{ color: '#777' }}>
 									{m.role}
 								</Typography>
-								<Box display="flex" justifyContent="center" gap={1} mt={1}>
+
+								{/* <-- muammo bergan joy: Box prop-larini sx ga ko‘chirdik */}
+								<Stack direction="row" justifyContent="center" spacing={1} sx={{ mt: 1 }}>
 									<IconButton size="small">
 										<FaInstagram />
 									</IconButton>
@@ -173,8 +192,8 @@ const About: NextPage = () => {
 									<IconButton size="small">
 										<FaTwitter />
 									</IconButton>
-								</Box>
-							</motion.div>
+								</Stack>
+							</Box>
 						))}
 					</Stack>
 				</Stack>
