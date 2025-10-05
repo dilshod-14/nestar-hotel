@@ -15,10 +15,9 @@ const Footer = () => {
 			query: { search: email }, // kerakli query key
 		});
 	};
+	// @ts-ignore
 	return (
-		// @ts-ignore
 		<Box id="hotel-footer">
-			{/* 📩 Newsletter */}
 			<Stack className="newsletter">
 				<Box className="left">
 					<Typography className="brand">StayGo</Typography>
@@ -58,7 +57,6 @@ const Footer = () => {
 				</Box>
 			</Stack>
 
-			{/* ⭐ Features */}
 			<Stack className="features">
 				{[
 					{ icon: '/img/icons/price.svg', title: 'Best Prices', text: 'Exclusive hotel offers' },
@@ -75,16 +73,15 @@ const Footer = () => {
 				))}
 			</Stack>
 
-			{/* 📍 Bottom Columns */}
 			<Stack className="bottom">
 				<Box className="col">
 					<img src="/img/logo/logoWhite.svg" alt="StayGo" className="logo" />
 					<Typography sx={{ color: '#aaa', mt: 1, mb: 2 }}>
 						Discover luxury stays and world-class hospitality worldwide.
 					</Typography>
-					<span>📍 Seoul, South Korea</span>
-					<span>📞 +82 10 4867 2909</span>
-					<span>📩 support@staygo.com</span>
+					<span> Seoul, South Korea</span>
+					<span> +82 10 4867 2909</span>
+					<span> support@staygo.com</span>
 					<Box className="icons">
 						<IconButton>
 							<FaFacebookF />
@@ -128,7 +125,6 @@ const Footer = () => {
 				</Box>
 			</Stack>
 
-			{/* ⚖️ Copyright */}
 			<Box className="copyright">
 				<span>© StayGo {new Date().getFullYear()} — All Rights Reserved</span>
 				<Box className="links">
