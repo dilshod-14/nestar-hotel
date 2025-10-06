@@ -18,6 +18,7 @@ import { userVar } from '../../apollo/store';
 import { Logout } from '@mui/icons-material';
 import { motion } from 'framer-motion';
 import NotificationBell from './common/NotificationList';
+import { REACT_APP_API_URL } from '../config';
 
 const Top = () => {
 	const device = useDeviceDetect();
