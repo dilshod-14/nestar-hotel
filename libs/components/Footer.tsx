@@ -240,7 +240,7 @@ const Footer = () => {
 						</div>
 						<div className="footer-bottom">
 							<p>
-								© {new Date().getFullYear()} <a href="/">Solven</a>. {t('All rights reserved')}.
+								© {new Date().getFullYear()} <a href="/">Staygo</a>. {t('All rights reserved')}.
 							</p>
 						</div>
 					</div>
