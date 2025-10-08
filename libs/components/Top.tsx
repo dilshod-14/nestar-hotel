@@ -179,7 +179,7 @@ const Top = () => {
 									<div>{t('Home')}</div>
 								</Link>
 								<Link href={'/about'}>
-									<div>About</div>
+									<div>{t('About')}</div>
 								</Link>
 
 								<Link href={'/property'}>
@@ -286,6 +286,16 @@ const Top = () => {
 												alt={'russiaFlag'}
 											/>
 											{t('Russian')}
+										</MenuItem>
+										<MenuItem disableRipple onClick={langChoice} id="uz">
+											<img
+												className="img-flag"
+												src={'/img/flag/languz.png'}
+												onClick={langChoice}
+												id="uz"
+												alt={'uzbFlag'}
+											/>
+											{t('Uzbek')}
 										</MenuItem>
 									</StyledMenu>
 								</div>

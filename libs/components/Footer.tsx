@@ -145,7 +145,7 @@ const Footer = () => {
 						</div>
 						<div className="footer-bottom">
 							<p>
-								© {new Date().getFullYear()} <a href="/">Solven</a>. {t('All rights reserved')}.
+								© {new Date().getFullYear()} <a href="/">Staygo</a>. {t('All rights reserved')}.
 							</p>
 						</div>
 					</div>
@@ -167,7 +167,7 @@ const Footer = () => {
 							{/* Logo Section */}
 							<div className="subscribe-section">
 								<Link href="/">
-									<img src="/img/logo/solven.png" alt="Solven" style={{ height: '52px' }} />
+									<img src="/img/logo/logoWhite.svg" alt="Solven" style={{ height: '52px' }} />
 								</Link>
 
 								<div className="input-box">
